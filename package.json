@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "sed -i 's/\\\"type\\\"/\\\"component-type\\\"/'  node_modules/component-querystring/index.js\n sed -n '/^var type = require/p' node_modules/component-querystring/index.js\n"
   },
   "dependencies": {
     "next": "10.0.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "component-querystring": "^2.0.0"    
   }
 }
