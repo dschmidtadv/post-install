@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "sed -i 's/\\\"type\\\"/\\\"component-type\\\"/'  node_modules/component-querystring/index.js\n sed -n '/^var type = require/p' node_modules/component-querystring/index.js\n"
   },
   "dependencies": {
     "next": "10.0.5",
